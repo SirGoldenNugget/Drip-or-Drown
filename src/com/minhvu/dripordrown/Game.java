@@ -142,6 +142,10 @@ public class Game extends JPanel implements Runnable {
 
     private void update() {
         if (state.equals(State.play)) {
+            for (CannonBall cannonBall : cannonBalls) {
+                cannonBall.update();
+            }
+
             for (Player player : players) {
                 player.update();
             }

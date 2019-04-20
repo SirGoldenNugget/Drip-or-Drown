@@ -138,11 +138,11 @@ public class Player {
     }
 
     public void fireLeftCannons() {
-
+        Game.getInstance().getCannonBalls().add(new CannonBall(this, getCenter(), damage, 7, 1000, Math.toRadians(angle - 90)));
     }
 
     public void fireRightCannons() {
-
+        Game.getInstance().getCannonBalls().add(new CannonBall(this, getCenter(), damage, 7, 1000, Math.toRadians(angle + 90)));
     }
 
     public void keyReleased(KeyEvent e) {

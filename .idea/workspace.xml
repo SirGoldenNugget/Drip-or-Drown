@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2197e1da-aa5e-4e7b-9277-bfdececf8f1a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="94" column="119" selection-start-line="94" selection-start-column="119" selection-end-line="94" selection-end-column="119" />
+            <state relative-caret-position="170">
+              <caret line="145" column="36" selection-start-line="145" selection-start-column="36" selection-end-line="145" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,7 +31,7 @@
       <file leaf-file-name="Maps.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="-75">
               <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
             </state>
           </provider>
@@ -44,17 +40,17 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+            <state relative-caret-position="1183">
+              <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CannonBall.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CannonBall.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
+            <state relative-caret-position="265">
+              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,10 +141,10 @@
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprites.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java" />
-        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" />
-        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java" />
       </list>
     </option>
   </component>
@@ -507,30 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="69" column="44" lean-forward="true" selection-start-line="69" selection-start-column="44" selection-end-line="69" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.desktop/java/awt/event/KeyEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -538,17 +510,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+        <state relative-caret-position="-75">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="94" column="119" selection-start-line="94" selection-start-column="119" selection-end-line="94" selection-end-column="119" />
+        <state relative-caret-position="170">
+          <caret line="145" column="36" selection-start-line="145" selection-start-column="36" selection-end-line="145" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1183">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/CannonBall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

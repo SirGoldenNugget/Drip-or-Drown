@@ -2,13 +2,16 @@ package com.minhvu.dripordrown.entity;
 
 import com.minhvu.dripordrown.Game;
 import com.minhvu.dripordrown.map.Maps;
+import com.minhvu.dripordrown.sprite.Sprites;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 import java.util.HashSet;
 
 public class CannonBall {
+    private static BufferedImage image = Sprites.getBufferedImage("/sprites/cannonBall.png");
     private Player source;
     private Point initial;
     private Point center;
@@ -43,8 +46,7 @@ public class CannonBall {
     public void paint(Graphics2D g2d) {
         AffineTransform transform = g2d.getTransform();
         g2d.rotate(angle, center.x, center.y);
-        g2d.setColor(Color.YELLOW);
-        g2d.fillOval(center.x, center.y, radius * 2, radius * 2);
+        g2d.drawImage(image, center.x, center.y, Game.getInstance());
         g2d.setTransform(transform);
     }
 
