@@ -2,43 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2197e1da-aa5e-4e7b-9277-bfdececf8f1a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/Scoreboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Map.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (10).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (11).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (12).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (13).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (14).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (15).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (16).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (17).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (18).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (19).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (20).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (21).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (22).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (23).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (24).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (4).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (5).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (8).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/PNG/Default size/Ships/ship (9).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/SpriteSheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprites.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprites.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spritesheet/shipsMiscellaneous_sheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spritesheet/shipsMiscellaneous_sheet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spritesheet/shipsMiscellaneous_sheet@2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Spritesheet/shipsMiscellaneous_sheet@2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Vector/shipsMiscellaneous_vector.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Vector/shipsMiscellaneous_vector.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Vector/tile_vector.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Vector/tiles_vector.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/cakeland.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/stonecold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/suburbia.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,16 +37,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Maps.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Maps.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="299">
+              <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -165,16 +140,16 @@
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/Scoreboard.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/Sound.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Map.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/sprite/Sprites.java" />
         <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/essentials/HealthBar.java" />
+        <option value="$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -343,7 +318,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
@@ -354,12 +329,12 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5042644" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.32995737" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32570806" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32570806" />
       <window_info anchor="bottom" id="Version Control" order="2" sideWeight="0.496208" weight="0.32827735" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32936078" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.6641387" visible="true" weight="0.21908316" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.6641387" visible="true" weight="0.21908316" />
       <window_info id="Structure" order="7" sideWeight="0.53954494" side_tool="true" weight="0.21481876" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -501,13 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -543,6 +511,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/minhvu/dripordrown/map/Maps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
         </state>
       </provider>
     </entry>
