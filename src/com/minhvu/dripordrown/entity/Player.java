@@ -20,6 +20,9 @@ public class Player extends Entity {
     private boolean rightPressed;
 
     private double angle;
+    private double acceleration;
+    private double maxSpeed;
+    private double turnSpeed;
 
     private double damage;
     private int reloadTime;
@@ -37,14 +40,16 @@ public class Player extends Entity {
         image = sprite.getNewShipImage();
 
         location = new Position(100, 100);
-        speed = 3;
+        speed = 0;
+        acceleration = 0.05;
+        maxSpeed = 3;
+        turnSpeed = 0.3;
+        angle = 0;
 
         upPressed = false;
         downPressed = false;
         leftPressed = false;
         rightPressed = false;
-
-        angle = 0;
 
         maxHealth = 100;
         health = maxHealth;
@@ -65,26 +70,34 @@ public class Player extends Entity {
 
         HealthBar.paint(g2d, this);
 
-        g2d.rotate(angle, getCenter().x, getCenter().y);
+        g2d.rotate(Math.toRadians(angle - 90), getCenter().x, getCenter().y);
         g2d.drawImage(image, location.getX(), location.getY(), Game.getInstance());
         g2d.setTransform(transform);
     }
 
     public void update() {
         if (upPressed) {
+            speed += acceleration;
 
+            if (speed > maxSpeed) {
+                speed = maxSpeed;
+            }
         }
 
         if (downPressed) {
+            speed -= acceleration;
 
+            if (speed < 0) {
+                speed = 0;
+            }
         }
 
         if (leftPressed) {
-
+            angle -= turnSpeed * speed;
         }
 
         if (rightPressed) {
-
+            angle += turnSpeed * speed;
         }
 
         // Update Health
@@ -96,6 +109,9 @@ public class Player extends Entity {
         if (health > maxHealth) {
             health = maxHealth;
         }
+
+        location.x += speed * Math.cos(Math.toRadians(angle));
+        location.y += speed * Math.sin(Math.toRadians(angle));
     }
 
     public void fireCannons() {

@@ -12,30 +12,30 @@ public class Sprites {
 
     public Sprites() {
         sprites.put("Bones", new Sprite(
-                getBufferedImage("/PNG/Default size/Ships/bonesShip1.png"),
-                getBufferedImage("/PNG/Default size/Ships/bonesShip2.png"),
-                getBufferedImage("/PNG/Default size/Ships/bonesShip3.png"),
-                getBufferedImage("/PNG/Default size/Ships/bonesShip4.png")));
+                getBufferedImage("/ships/bonesShip1.png"),
+                getBufferedImage("/ships/bonesShip2.png"),
+                getBufferedImage("/ships/bonesShip3.png"),
+                getBufferedImage("/ships/bonesShip4.png")));
         sprites.put("Cross", new Sprite(
-                getBufferedImage("/PNG/Default size/Ships/crossShip1.png"),
-                getBufferedImage("/PNG/Default size/Ships/crossShip2.png"),
-                getBufferedImage("/PNG/Default size/Ships/crossShip3.png"),
-                getBufferedImage("/PNG/Default size/Ships/crossShip4.png")));
+                getBufferedImage("/ships/crossShip1.png"),
+                getBufferedImage("/ships/crossShip2.png"),
+                getBufferedImage("/ships/crossShip3.png"),
+                getBufferedImage("/ships/crossShip4.png")));
         sprites.put("Horse", new Sprite(
-                getBufferedImage("/PNG/Default size/Ships/horseShip1.png"),
-                getBufferedImage("/PNG/Default size/Ships/horseShip2.png"),
-                getBufferedImage("/PNG/Default size/Ships/horseShip3.png"),
-                getBufferedImage("/PNG/Default size/Ships/horseShip4.png")));
+                getBufferedImage("/ships/horseShip1.png"),
+                getBufferedImage("/ships/horseShip2.png"),
+                getBufferedImage("/ships/horseShip3.png"),
+                getBufferedImage("/ships/horseShip4.png")));
         sprites.put("Skull", new Sprite(
-                getBufferedImage("/PNG/Default size/Ships/skullShip1.png"),
-                getBufferedImage("/PNG/Default size/Ships/skullShip2.png"),
-                getBufferedImage("/PNG/Default size/Ships/skullShip3.png"),
-                getBufferedImage("/PNG/Default size/Ships/skullShip4.png")));
+                getBufferedImage("/ships/skullShip1.png"),
+                getBufferedImage("/ships/skullShip2.png"),
+                getBufferedImage("/ships/skullShip3.png"),
+                getBufferedImage("/ships/skullShip4.png")));
         sprites.put("Sword", new Sprite(
-                getBufferedImage("/PNG/Default size/Ships/swordShip1.png"),
-                getBufferedImage("/PNG/Default size/Ships/swordShip2.png"),
-                getBufferedImage("/PNG/Default size/Ships/swordShip3.png"),
-                getBufferedImage("/PNG/Default size/Ships/swordShip4.png")));
+                getBufferedImage("/ships/swordShip1.png"),
+                getBufferedImage("/ships/swordShip2.png"),
+                getBufferedImage("/ships/swordShip3.png"),
+                getBufferedImage("/ships/swordShip4.png")));
     }
 
     public Sprite getRandomSprite() {
