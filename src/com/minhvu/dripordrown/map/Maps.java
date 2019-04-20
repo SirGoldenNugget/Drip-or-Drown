@@ -15,7 +15,7 @@ public class Maps {
     public Maps() {
         maps = new HashMap<>();
 
-        int[][] suburbiaCollisionMap = {
+        int[][] bigblueCollisionMap = {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -35,7 +35,7 @@ public class Maps {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         };
 
-        Map bigblue = new Map(Sprites.getBufferedImage("/bigblue.png"), suburbiaCollisionMap);
+        Map bigblue = new Map(Sprites.getBufferedImage("/bigblue.png"), bigblueCollisionMap);
 
         maps.put("bigblue", bigblue);
 

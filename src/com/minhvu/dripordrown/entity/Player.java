@@ -1,32 +1,47 @@
 package com.minhvu.dripordrown.entity;
 
 import com.minhvu.dripordrown.Game;
-import com.minhvu.dripordrown.essentials.HealthBar;
 import com.minhvu.dripordrown.essentials.Position;
 import com.minhvu.dripordrown.essentials.Scoreboard;
+import com.minhvu.dripordrown.map.Maps;
 import com.minhvu.dripordrown.sprite.Sprite;
 import com.minhvu.dripordrown.sprite.Sprites;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
 
-public class Player extends Entity {
+public class Player {
+    private BufferedImage image;
     private Sprite sprite;
+
+    private int keyAccelerate;
+    private int keyDecelerate;
+    private int keyTurnLeft;
+    private int keyTurnRight;
+    private int keyLeftCannons;
+    private int keyRightCannons;
 
     private boolean upPressed;
     private boolean downPressed;
     private boolean leftPressed;
     private boolean rightPressed;
 
+    private Position location;
     private double angle;
     private double acceleration;
+    private double speed;
     private double maxSpeed;
     private double turnSpeed;
 
+    private double health;
+    private double maxHealth;
     private double damage;
     private int reloadTime;
-    private boolean reloading;
+    private boolean leftReloading;
+    private boolean rightReloading;
 
     private long regenTimer;
     private int regenTime;
@@ -34,7 +49,14 @@ public class Player extends Entity {
 
     private boolean alive;
 
-    public Player() {
+    public Player(int keyAccelerate, int keyDecelerate, int keyTurnLeft, int keyTurnRight, int keyLeftCannons, int keyRightCannons) {
+        this.keyAccelerate = keyAccelerate;
+        this.keyDecelerate = keyDecelerate;
+        this.keyTurnLeft = keyTurnLeft;
+        this.keyTurnRight = keyTurnRight;
+        this.keyLeftCannons = keyLeftCannons;
+        this.keyRightCannons = keyRightCannons;
+
         sprite = new Sprites().getRandomSprite();
 
         image = sprite.getNewShipImage();
@@ -56,7 +78,8 @@ public class Player extends Entity {
 
         damage = 10;
         reloadTime = 886;
-        reloading = false;
+        leftReloading = false;
+        rightReloading = false;
 
         regenTimer = System.currentTimeMillis();
         regenTime = 500;
@@ -68,7 +91,7 @@ public class Player extends Entity {
     public void paint(Graphics2D g2d) {
         AffineTransform transform = g2d.getTransform();
 
-        HealthBar.paint(g2d, this);
+//        HealthBar.paint(g2d, this);
 
         g2d.rotate(Math.toRadians(angle - 90), getCenter().x, getCenter().y);
         g2d.drawImage(image, location.getX(), location.getY(), Game.getInstance());
@@ -114,63 +137,83 @@ public class Player extends Entity {
         location.y += speed * Math.sin(Math.toRadians(angle));
     }
 
-    public void fireCannons() {
+    public void fireLeftCannons() {
+
+    }
+
+    public void fireRightCannons() {
 
     }
 
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_W) {
+        if (e.getKeyCode() == keyAccelerate) {
             upPressed = false;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_S) {
+        if (e.getKeyCode() == keyDecelerate) {
             downPressed = false;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_A) {
+        if (e.getKeyCode() == keyTurnLeft) {
             leftPressed = false;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_D) {
+        if (e.getKeyCode() == keyTurnRight) {
             rightPressed = false;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_Q) {
-            fireCannons();
+        if (e.getKeyCode() == keyLeftCannons) {
+            fireLeftCannons();
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_E) {
-
+        if (e.getKeyCode() == keyRightCannons) {
+            fireRightCannons();
         }
     }
 
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_W) {
+        if (e.getKeyCode() == keyAccelerate) {
             upPressed = true;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_S) {
+        if (e.getKeyCode() == keyDecelerate) {
             downPressed = true;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_A) {
+        if (e.getKeyCode() == keyTurnLeft) {
             leftPressed = true;
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_D) {
+        if (e.getKeyCode() == keyTurnRight) {
             rightPressed = true;
         }
     }
 
-    private void reload() {
-        if (!reloading) {
-            reloading = true;
+    private void reloadLeft() {
+        if (!leftReloading) {
+            leftReloading = true;
 
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
                         public void run() {
-                            reloading = false;
+                            leftReloading = false;
+
+                        }
+                    }, reloadTime
+            );
+        }
+    }
+
+    private void reloadRight() {
+        if (!rightReloading) {
+            rightReloading = true;
+
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            rightReloading = false;
 
                         }
                     }, reloadTime
@@ -186,7 +229,6 @@ public class Player extends Entity {
         this.damage = damage;
     }
 
-    @Override
     public void damage(double damage) {
         health -= damage;
 
@@ -198,17 +240,52 @@ public class Player extends Entity {
         }
     }
 
-    @Override
+    public Point getLocation() {
+        return new Point(location.getX(), location.getY());
+    }
+
+    protected boolean hasCollision() {
+        for (int i = 0; i < Game.getInstance().getMaps().getCurrentMap().getCollisionMap().length; ++i) {
+            for (int j = 0; j < Game.getInstance().getMaps().getCurrentMap().getCollisionMap()[i].length; ++j) {
+                int value = Game.getInstance().getMaps().getCurrentMap().getCollisionMap()[i][j];
+
+                if ((value == Maps.unpassable || value == Maps.shootable) && getBounds().intersects(new Rectangle2D.Float(j * 64, i * 64, 64, 64))) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
     public Point getCenter() {
         return new Point(location.getX() + getDimensions().width / 2, location.getY() + getDimensions().height / 2);
     }
 
-    @Override
     protected Dimension getDimensions() {
         return new Dimension(image.getWidth(Game.getInstance()), image.getHeight(Game.getInstance()));
     }
 
-    @Override
     public Rectangle getBounds() {
         return new Rectangle(location.getX(), location.getY(), getDimensions().width, getDimensions().height);
     }

@@ -1,8 +1,8 @@
 package com.minhvu.dripordrown;
 
+import com.minhvu.dripordrown.entity.CannonBall;
 import com.minhvu.dripordrown.entity.Player;
 import com.minhvu.dripordrown.essentials.Menu;
-import com.minhvu.dripordrown.essentials.Scoreboard;
 import com.minhvu.dripordrown.map.Maps;
 
 import javax.swing.*;
@@ -11,10 +11,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 @SuppressWarnings("serial")
 public class Game extends JPanel implements Runnable {
-    // Used For Accessing JPanel Method.
     private static Game instance;
     private JFrame frame;
     private boolean running = false;
@@ -23,16 +23,14 @@ public class Game extends JPanel implements Runnable {
     private State state;
     private Maps maps;
 
-    // Objects Used In The Game.
-    private Player player;
+    private CopyOnWriteArrayList<Player> players;
+    private CopyOnWriteArrayList<CannonBall> cannonBalls;
 
-    // Constructor.
     public Game() {
         instance = this;
 
         state = State.menu;
 
-        // Anonymous Use Of Keyboard Input.
         KeyListener keylistener = new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -41,16 +39,19 @@ public class Game extends JPanel implements Runnable {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                player.keyPressed(e);
+                for (Player player : players) {
+                    player.keyPressed(e);
+                }
             }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                player.keyReleased(e);
+                for (Player player : players) {
+                    player.keyReleased(e);
+                }
             }
         };
 
-        // Anonymouse Use Of Mouse Input.
         MouseListener mouselistener = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -79,10 +80,8 @@ public class Game extends JPanel implements Runnable {
         addMouseListener(mouselistener);
         setFocusable(true);
 
-        // Load In The Sprite Sheets.
         maps = new Maps();
 
-        // Create The Frame.
         frame = new JFrame("Drip or Drown");
         frame.add(this);
         frame.setSize(1920, 1080);
@@ -92,10 +91,11 @@ public class Game extends JPanel implements Runnable {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Initialize Everyhing.
-        player = new Player();
+        players = new CopyOnWriteArrayList<>();
+        players.add(new Player(KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_Q, KeyEvent.VK_E));
 
-        // Begins The Thread.
+        cannonBalls = new CopyOnWriteArrayList<>();
+
         start();
     }
 
@@ -108,7 +108,6 @@ public class Game extends JPanel implements Runnable {
         return instance;
     }
 
-    // Starts The Thread.
     private synchronized void start() {
         if (running) {
             return;
@@ -120,7 +119,6 @@ public class Game extends JPanel implements Runnable {
         thread.start();
     }
 
-    // The Heart Of The Game: The Game Loop.
     @Override
     public void run() {
         long lasttime = System.nanoTime();
@@ -142,16 +140,18 @@ public class Game extends JPanel implements Runnable {
         stop();
     }
 
-    // Updates The Objects.
     private void update() {
         if (state.equals(State.play)) {
-            player.update();
+            for (Player player : players) {
+                player.update();
+            }
+
+            cannonBalls.removeIf(cannonBall -> !cannonBall.isAlive());
         }
 
         repaint();
     }
 
-    // Stops The Thread.
     private synchronized void stop() {
         if (!running) {
             return;
@@ -168,7 +168,6 @@ public class Game extends JPanel implements Runnable {
         System.exit(1);
     }
 
-    // Used For Painting/Rendering Images.
     @Override
     public void paint(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
@@ -180,8 +179,15 @@ public class Game extends JPanel implements Runnable {
         g2d.drawImage(maps.getCurrentMap().getBufferedImage(), 0, 0, Game.getInstance());
 
         if (state.equals(State.play)) {
-            Scoreboard.paint(g2d);
-            player.paint(g2d);
+//            Scoreboard.paint(g2d);
+
+            for (CannonBall cannonBall : cannonBalls) {
+                cannonBall.paint(g2d);
+            }
+
+            for (Player player : players) {
+                player.paint(g2d);
+            }
         } else if (state.equals(State.menu)) {
             Menu.paint(g2d);
         } else if (state.equals(State.end)) {
@@ -200,8 +206,12 @@ public class Game extends JPanel implements Runnable {
         return maps;
     }
 
-    public Player getPlayer() {
-        return player;
+    public CopyOnWriteArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public CopyOnWriteArrayList<CannonBall> getCannonBalls() {
+        return cannonBalls;
     }
 
     public void setState(State state) {
