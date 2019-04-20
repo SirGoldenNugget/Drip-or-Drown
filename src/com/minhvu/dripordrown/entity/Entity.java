@@ -2,6 +2,7 @@ package com.minhvu.dripordrown.entity;
 
 import com.minhvu.dripordrown.Game;
 import com.minhvu.dripordrown.essentials.Position;
+import com.minhvu.dripordrown.map.Maps;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;

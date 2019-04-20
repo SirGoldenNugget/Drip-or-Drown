@@ -1,38 +1,30 @@
 package com.minhvu.dripordrown;
 
 import com.minhvu.dripordrown.entity.Player;
-import com.minhvu.dripordrown.sprite.SpriteSheet;
-import javafx.scene.Camera;
+import com.minhvu.dripordrown.essentials.Menu;
+import com.minhvu.dripordrown.essentials.Scoreboard;
+import com.minhvu.dripordrown.map.Maps;
 
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 @SuppressWarnings("serial")
 public class Game extends JPanel implements Runnable {
     // Used For Accessing JPanel Method.
     private static Game instance;
     private JFrame frame;
-    private Camera camera;
     private boolean running = false;
     private Thread thread;
 
     private State state;
-    private SpriteSheet characters;
+    private Maps maps;
 
     // Objects Used In The Game.
     private Player player;
-
-    // Used For Keeping Count Of Objects.
-    private long respawnTimer;
-    private int respawnTime;
-    private long powerupTimer;
-    private int powerupTime;
 
     // Constructor.
     public Game() {
@@ -62,7 +54,6 @@ public class Game extends JPanel implements Runnable {
         MouseListener mouselistener = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
             }
 
             @Override
@@ -71,6 +62,7 @@ public class Game extends JPanel implements Runnable {
 
             @Override
             public void mouseReleased(MouseEvent e) {
+                Menu.mouseReleased(e);
             }
 
             @Override
@@ -80,7 +72,6 @@ public class Game extends JPanel implements Runnable {
 
             @Override
             public void mouseExited(MouseEvent e) {
-
             }
         };
 
@@ -89,7 +80,7 @@ public class Game extends JPanel implements Runnable {
         setFocusable(true);
 
         // Load In The Sprite Sheets.
-        characters = new SpriteSheet("/spritesheet_characters.png");
+        maps = new Maps();
 
         // Create The Frame.
         frame = new JFrame("Drip or Drown");
@@ -186,25 +177,27 @@ public class Game extends JPanel implements Runnable {
 
         super.paint(g2d);
 
-        g2d.drawImage(maps.getCurrentMap().getSpritesheet().getSpritesheet(), 0, 0, Game.getInstance());
+        g2d.drawImage(maps.getCurrentMap().getBufferedImage(), 0, 0, Game.getInstance());
 
         if (state.equals(State.play)) {
+            Scoreboard.paint(g2d);
             player.paint(g2d);
         } else if (state.equals(State.menu)) {
+            Menu.paint(g2d);
         } else if (state.equals(State.end)) {
         }
     }
 
     public void reset() {
-        player = new Player();
+
     }
 
     public Frame getFrame() {
         return frame;
     }
 
-    public SpriteSheet getChararcters() {
-        return characters;
+    public Maps getMaps() {
+        return maps;
     }
 
     public Player getPlayer() {

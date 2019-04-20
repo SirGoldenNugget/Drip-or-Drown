@@ -1,34 +1,33 @@
 package com.minhvu.dripordrown.sprite;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Sprite {
-    private BufferedImage pistolImage;
-    private BufferedImage machineImage;
-    private BufferedImage reloadImage;
-    private Point center;
+    private BufferedImage newShipImage;
+    private BufferedImage wornShipImage;
+    private BufferedImage damagedShipImage;
+    private BufferedImage burnedShipImage;
 
-    public Sprite(BufferedImage pistolImage, BufferedImage machineImage, BufferedImage reloadImage, Point center) {
-        this.pistolImage = pistolImage;
-        this.machineImage = machineImage;
-        this.reloadImage = reloadImage;
-        this.center = center;
+    public Sprite(BufferedImage newShipImage, BufferedImage wornShipImage, BufferedImage damagedShipImage, BufferedImage burnedShipImage) {
+        this.newShipImage = newShipImage;
+        this.wornShipImage = wornShipImage;
+        this.damagedShipImage = damagedShipImage;
+        this.burnedShipImage = burnedShipImage;
     }
 
-    public BufferedImage getPistolImage() {
-        return pistolImage;
+    public BufferedImage getNewShipImage() {
+        return newShipImage;
     }
 
-    public BufferedImage getMachineImage() {
-        return machineImage;
+    public BufferedImage getWornShipImage() {
+        return wornShipImage;
     }
 
-    public BufferedImage getReloadImage() {
-        return reloadImage;
+    public BufferedImage getDamagedShipImage() {
+        return damagedShipImage;
     }
 
-    public Point getCenter() {
-        return center;
+    public BufferedImage getBurnedShipImage() {
+        return burnedShipImage;
     }
 }
